@@ -35,19 +35,22 @@ function randomChoice(){
 let rockButton = document.querySelector("#rock");
 
 rockButton.addEventListener("click", function(){
-    console.log("I'm the Rock Button and I Know JS!");
+    playerChoice = "Rock";
+    console.log(playerChoice);
 });
 
 let paperButton = document.querySelector("#paper");
 
 paperButton.addEventListener("click",function(){
-    console.log("I'm the Paper Button and I KNOW JS!");
+    playerChoice = "Paper";
+    console.log(playerChoice);
 });
 
 let scissorsButton = document.querySelector("#scissors");
 
 scissorsButton.addEventListener("click", function(){
-    console.log("I'm the Scissors Button and I Know JS!");
+    playerChoice = "Scissors";
+    console.log(playerChoice);
 });
 
 // function playerPrompt() {
