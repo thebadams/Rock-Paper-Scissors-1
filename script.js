@@ -32,25 +32,27 @@ function randomChoice(){
     return computerChoice;
 };
 
+let message = document.querySelector("#message");
+
 let rockButton = document.querySelector("#rock");
 
 rockButton.addEventListener("click", function(){
     playerChoice = "Rock";
-    console.log(playerChoice);
+    message.textContent = `You Chose ${playerChoice}`;
 });
 
 let paperButton = document.querySelector("#paper");
 
 paperButton.addEventListener("click",function(){
     playerChoice = "Paper";
-    console.log(playerChoice);
+    message.textContent = `You Chose ${playerChoice}`;
 });
 
 let scissorsButton = document.querySelector("#scissors");
 
 scissorsButton.addEventListener("click", function(){
     playerChoice = "Scissors";
-    console.log(playerChoice);
+    message.textContent = `You Chose ${playerChoice}`;
 });
 
 // function playerPrompt() {
