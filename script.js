@@ -34,9 +34,21 @@ function randomChoice(){
 
 let rockButton = document.querySelector("#rock");
 
-rockButton.addEventListener('click', function(){
+rockButton.addEventListener("click", function(){
     console.log("I'm the Rock Button and I Know JS!");
-})
+});
+
+let paperButton = document.querySelector("#paper");
+
+paperButton.addEventListener("click",function(){
+    console.log("I'm the Paper Button and I KNOW JS!");
+});
+
+let scissorsButton = document.querySelector("#scissors");
+
+scissorsButton.addEventListener("click", function(){
+    console.log("I'm the Scissors Button and I Know JS!");
+});
 
 // function playerPrompt() {
 //    return prompt("Please Choose Rock, Paper, Or Scissors");
