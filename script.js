@@ -33,41 +33,56 @@ function randomChoice(){
     return computerChoice;
 };
 
-let message = document.querySelector("#message");
-let computerScore = document.querySelector("#computerDisplay");
-let playerScore = document.querySelector("#playerDisplay")
+var message = document.querySelector("#message");
+var computerScore = document.querySelector("#computerDisplay");
+var playerScore = document.querySelector("#playerDisplay")
 
-let rockButton = document.querySelector("#rock");
+var rockButton = document.querySelector("#rock");
 
 rockButton.addEventListener("click", function(){
-    playerChoice = "Rock";
+    playerChoice = this.textContent;
     randomChoice()
     compare();
-    if(winner==="Draw") {
+    if (winner === "Draw") {
         message.textContent = `You Chose ${playerChoice}, and the Computer Chose ${computerChoice}, Which Results In a ${winner}`;
     } else {
-    message.textContent = `You Chose ${playerChoice}, the Computer Chose ${computerChoice}, ${winner} Wins!`;
+        message.textContent = `You Chose ${playerChoice}, the Computer Chose ${computerChoice}, ${winner} Wins!`;
     }
     playerScore.textContent = playerWins;
     computerScore.textContent = computerWins;
+
 });
 
-let paperButton = document.querySelector("#paper");
+var paperButton = document.querySelector("#paper");
 
 paperButton.addEventListener("click",function(){
-    playerChoice = "Paper";
-    randomChoice();
+    playerChoice = this.textContent;
+    randomChoice()
     compare();
-    message.textContent = `You Chose ${playerChoice}, the Computer Chose ${computerChoice}, ${winner}`;
+    if (winner === "Draw") {
+        message.textContent = `You Chose ${playerChoice}, and the Computer Chose ${computerChoice}, Which Results In a ${winner}`;
+    } else {
+        message.textContent = `You Chose ${playerChoice}, the Computer Chose ${computerChoice}, ${winner} Wins!`;
+    }
+    playerScore.textContent = playerWins;
+    computerScore.textContent = computerWins;
+
 });
 
 let scissorsButton = document.querySelector("#scissors");
 
 scissorsButton.addEventListener("click", function(){
-    playerChoice = "Scissors";
-    randomChoice();
+    playerChoice = this.textContent;
+    randomChoice()
     compare();
-    message.textContent = `You Chose ${playerChoice}, the Computer Chose ${computerChoice}, ${winner}`;
+    if (winner === "Draw") {
+        message.textContent = `You Chose ${playerChoice}, and the Computer Chose ${computerChoice}, Which Results In a ${winner}`;
+    } else {
+        message.textContent = `You Chose ${playerChoice}, the Computer Chose ${computerChoice}, ${winner} Wins!`;
+    }
+    playerScore.textContent = playerWins;
+    computerScore.textContent = computerWins;
+
 });
 
 // function playerPrompt() {
@@ -121,8 +136,6 @@ function compare() {
 
     }
 }
-
-// function playGame()
 
 // // Game Start and End Conditions
 // function gameStart() {
