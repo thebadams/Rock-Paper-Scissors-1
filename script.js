@@ -32,6 +32,12 @@ function randomChoice(){
     return computerChoice;
 };
 
+let rockButton = document.querySelector("#rock");
+
+rockButton.addEventListener('click', function(){
+    console.log("I'm the Rock Button and I Know JS!");
+})
+
 // function playerPrompt() {
 //    return prompt("Please Choose Rock, Paper, Or Scissors");
 // }
