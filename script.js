@@ -38,21 +38,24 @@ let rockButton = document.querySelector("#rock");
 
 rockButton.addEventListener("click", function(){
     playerChoice = "Rock";
-    message.textContent = `You Chose ${playerChoice}`;
+    randomChoice()
+    message.textContent = `You Chose ${playerChoice}, the Computer Chose ${computerChoice}`;
 });
 
 let paperButton = document.querySelector("#paper");
 
 paperButton.addEventListener("click",function(){
     playerChoice = "Paper";
-    message.textContent = `You Chose ${playerChoice}`;
+    randomChoice();
+    message.textContent = `You Chose ${playerChoice}, the Computer Chose ${computerChoice}`;
 });
 
 let scissorsButton = document.querySelector("#scissors");
 
 scissorsButton.addEventListener("click", function(){
     playerChoice = "Scissors";
-    message.textContent = `You Chose ${playerChoice}`;
+    randomChoice();
+    message.textContent = `You Chose ${playerChoice}, the Computer Chose ${computerChoice}`;
 });
 
 // function playerPrompt() {
