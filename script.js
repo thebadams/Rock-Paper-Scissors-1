@@ -127,7 +127,7 @@ function compare() {
                 winner = "Computer"
                 computerWins++;
             } else if (computerChoice === "Paper") {
-                winner = "Computer"
+                winner = "Player"
                 playerWins++;
             } else {
                 winner = "Draw"
