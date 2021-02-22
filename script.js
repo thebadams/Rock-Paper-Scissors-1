@@ -15,6 +15,7 @@ var playerChoice
 var computerChoice
 var playerWins = 0;
 var computerWins = 0;
+var winner
 
 
 // Generate random option
@@ -33,13 +34,22 @@ function randomChoice(){
 };
 
 let message = document.querySelector("#message");
+let computerScore = document.querySelector("#computerDisplay");
+let playerScore = document.querySelector("#playerDisplay")
 
 let rockButton = document.querySelector("#rock");
 
 rockButton.addEventListener("click", function(){
     playerChoice = "Rock";
     randomChoice()
-    message.textContent = `You Chose ${playerChoice}, the Computer Chose ${computerChoice}`;
+    compare();
+    if(winner==="Draw") {
+        message.textContent = `You Chose ${playerChoice}, and the Computer Chose ${computerChoice}, Which Results In a ${winner}`;
+    } else {
+    message.textContent = `You Chose ${playerChoice}, the Computer Chose ${computerChoice}, ${winner} Wins!`;
+    }
+    playerScore.textContent = playerWins;
+    computerScore.textContent = computerWins;
 });
 
 let paperButton = document.querySelector("#paper");
@@ -47,7 +57,8 @@ let paperButton = document.querySelector("#paper");
 paperButton.addEventListener("click",function(){
     playerChoice = "Paper";
     randomChoice();
-    message.textContent = `You Chose ${playerChoice}, the Computer Chose ${computerChoice}`;
+    compare();
+    message.textContent = `You Chose ${playerChoice}, the Computer Chose ${computerChoice}, ${winner}`;
 });
 
 let scissorsButton = document.querySelector("#scissors");
@@ -55,7 +66,8 @@ let scissorsButton = document.querySelector("#scissors");
 scissorsButton.addEventListener("click", function(){
     playerChoice = "Scissors";
     randomChoice();
-    message.textContent = `You Chose ${playerChoice}, the Computer Chose ${computerChoice}`;
+    compare();
+    message.textContent = `You Chose ${playerChoice}, the Computer Chose ${computerChoice}, ${winner}`;
 });
 
 // function playerPrompt() {
@@ -69,48 +81,48 @@ scissorsButton.addEventListener("click", function(){
 //     } 
 // }
 
-// //test player choice vs computer choice
-// function compare() {
-//     switch (playerChoice) {
-//         case "Rock":
-//             if (computerChoice === "Scissors") {
-//                 alert("Player Wins!");
-//                 playerWins++;
-//             } else if (computerChoice === "Paper") {
-//                 alert("Computer Wins");
-//                 computerWins++;
+//test player choice vs computer choice
+function compare() {
+    switch (playerChoice) {
+        case "Rock":
+            if (computerChoice === "Scissors") {
+                winner = "Player";
+                playerWins++;
+            } else if (computerChoice === "Paper") {
+                winner = "Computer";
+                computerWins++;
 
-//             } else {
-//                 alert("Draw");
-//             } break
+            } else {
+                winner = "Draw";
+            } break
 
-//         case "Paper":
-//             if (computerChoice === "Scissors") {
-//                 alert("Computer Wins");
-//                 computerWins++;
-//             } else if (computerChoice === "Rock") {
-//                 alert("Player Wins!");
-//                 playerWins++;
-//             } else {
-//                 alert("Draw")
-//             } break;
+        case "Paper":
+            if (computerChoice === "Scissors") {
+                winner = "Computer";
+                computerWins++;
+            } else if (computerChoice === "Rock") {
+                winner = "Player";
+                playerWins++;
+            } else {
+                winner = "Draw"
+            } break;
 
-//         case "Scissors":
-//             if (computerChoice === "Rock") {
-//                 alert("Computer Wins!");
-//                 computerWins++;
-//             } else if (computerChoice === "Paper") {
-//                 alert("Player Wins!");
-//                 playerWins++;
-//             } else {
-//                 alert("Draw");
-//             }
-//             break;
+        case "Scissors":
+            if (computerChoice === "Rock") {
+                winner = "Computer"
+                computerWins++;
+            } else if (computerChoice === "Paper") {
+                winner = "Computer"
+                playerWins++;
+            } else {
+                winner = "Draw"
+            }
+            break;
 
-//         default:
-//             alert("Not a Valid Option!");
-//     }
-// }
+    }
+}
+
+// function playGame()
 
 // // Game Start and End Conditions
 // function gameStart() {
